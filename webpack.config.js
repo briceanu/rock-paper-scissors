@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: {
     main: './src/js/main.js',
-    buttons: './src/js/buttons.js',
+    renderTitle: './src/js/renderTitle.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -61,7 +61,7 @@ module.exports = {
       filename: 'index.html',
     }),
     new MiniCssExtractPlugin({ filename: 'style[contenthash].css' }),
-    // new FaviconsWebpackPlugin("./src/assets/dog.svg"),
+    new FaviconsWebpackPlugin('./src/assets/rock.svg'),
   ],
 };
 //change mode to production and then

@@ -1,1 +1,107 @@
- 
+@use '_fonts' as *;
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../assets/images/black_1280.jpg);
+}
+.hide_button {
+  display: none;
+}
+.players_container {
+  display: none;
+}
+h1.title {
+  font-family: $font-sigmar;
+  text-align: center;
+  font-size: 5rem;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  padding: 1rem;
+  margin-top: 5rem;
+  color: white;
+  text-shadow: 8px 8px 3px black;
+}
+.button_container {
+  width: 100vw;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    padding: 0.5rem 0.7rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: $font-clistoga;
+    font-size: $medium;
+    // border: none;
+    box-shadow: 0 0 20px black;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+.show_players_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 2rem;
+  width: 100vw;
+  height: 200px;
+}
+@mixin style {
+  //mixin used to style the players contianers
+  min-width: 40vw;
+  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  background-color: rgb(247, 237, 237);
+  box-shadow: 8px 8px 3px black;
+  text-align: center;
+}
+
+.player_container {
+  @include style;
+  position: relative;
+  p {
+    font-family: $font-sigmar;
+    padding: 0.5rem 0;
+    font-weight: 900;
+    font-size: $medium;
+  }
+
+  h3 {
+    padding: 0.5rem 0;
+    font-family: $font-girassol;
+    font-weight: 900;
+    font-size: $medium;
+    justify-content: center;
+  }
+}
+.img_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 4rem;
+  }
+}
+.computer_container {
+  @include style;
+  p {
+    padding: 0.5rem 0;
+    font-family: $font-sigmar;
+    font-weight: 900;
+    font-size: $medium;
+  }
+  h3 {
+    padding: 0.5rem 0;
+    font-family: $font-girassol;
+    font-weight: 900;
+    font-size: $medium;
+  }
+}
+//styling the players tools
