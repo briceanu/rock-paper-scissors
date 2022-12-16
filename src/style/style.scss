@@ -7,7 +7,21 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(../assets/images/black_1280.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url('../assets/images/black_1280.jpg');
+  background-image: image-set(
+    url('../assets/images/black_640.jpg') 640w,
+    url('../assets/images/black_1280.jpg') 1280w,
+    url('../assets/images/black_1920.jpg') 1920w
+  );
+  background-image: -webkit-image-set(
+    url('../assets/images/black_640.jpg') 640w,
+    url('../assets/images/black_1280.jpg') 1280w,
+    url('../assets/images/black_1920.jpg') 1920w
+  );
 }
 .hide_button {
   display: none;
@@ -19,7 +33,7 @@ h1.title {
   font-family: $font-sigmar;
   text-align: center;
   font-size: 5rem;
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
   padding: 1rem;
   margin-top: 5rem;
   color: white;
@@ -31,13 +45,13 @@ h1.title {
   display: flex;
   align-items: center;
   justify-content: center;
-  button {
+  button.begin_game {
+    margin-top: 25vh;
     padding: 0.5rem 0.7rem;
     text-transform: uppercase;
     font-weight: 900;
     font-family: $font-clistoga;
     font-size: $medium;
-    // border: none;
     box-shadow: 0 0 20px black;
     &:hover {
       scale: 1.1;
@@ -54,9 +68,8 @@ h1.title {
 }
 @mixin style {
   //mixin used to style the players contianers
-  min-width: 40vw;
+  min-width: 30vw;
   border-radius: 10px;
-  height: 100%;
   position: relative;
   background-color: rgb(247, 237, 237);
   box-shadow: 8px 8px 3px black;
@@ -105,3 +118,31 @@ h1.title {
   }
 }
 //styling the players tools
+.players_tools {
+  margin: 1rem;
+  button {
+    border: none;
+  }
+  button > img {
+    background-color: white;
+
+    width: 80px;
+    height: 80px;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+//styling score_container
+.score_container {
+  margin-top: 6rem;
+  text-align: center;
+}
+.endbutton {
+  margin-left: auto;
+}
+@media (max-width: 600px) {
+  h1.title {
+    margin-top: 2rem;
+  }
+}

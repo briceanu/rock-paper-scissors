@@ -9,26 +9,56 @@
   <body>
     <h1 class="title"></h1>
     <div class="button_container">
-      <button>Start Game</button>
+      <button class="begin_game">Start Game</button>
     </div>
     <div class="players_container">
       <div class="player_container">
         <h3>PLAYER</h3>
         <div class="img_container">
           <img src="./assets/player.svg" alt="player" />
-          <p class="score">SCORE:<span></span></p>
+          <p class="player_score">SCORE:<span></span></p>
+        </div>
+        <div class="players_tools">
+          <button>
+            <img class="rock_btn" src="./assets/rock.svg" alt="rock" />
+          </button>
+          <button>
+            <img class="paper_btn" src="./assets/paper.svg" alt="paper" />
+          </button>
+          <button>
+            <img
+              class="scissors_btn"
+              src="./assets/scissors2.svg"
+              alt="Scissors"
+            />
+          </button>
         </div>
       </div>
       <div class="computer_container">
         <h3>COMPUTER</h3>
         <div class="img_container">
           <img src="./assets/robot.svg" alt="robot" />
-          <p class="score">SCORE:<span></span></p>
+          <p class="computer_score">SCORE: <span></span></p>
         </div>
         <div class="players_tools">
-          <button><img src="./assets/rock.svg" alt="rock" /></button>
+          <button>
+            <img class="computer_rock" src="./assets/rock.svg" alt="rock" />
+          </button>
+          <button>
+            <img class="computer_paper" src="./assets/paper.svg" alt="paper" />
+          </button>
+          <button>
+            <img
+              class="computer_scissors"
+              src="./assets/scissors2.svg"
+              alt="Scissors"
+            />
+          </button>
         </div>
       </div>
     </div>
+    <div class="score_container"></div>
+    <p class="gameupdates"></p>
+    <button id="endbutton">Play Again?</button>
   </body>
 </html>
