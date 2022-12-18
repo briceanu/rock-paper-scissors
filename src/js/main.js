@@ -254,17 +254,39 @@ function main() {
           `YOU WIN ${playerScore}:${computerScore}!`
         );
         gameUpdates.appendChild(text);
+        const players_container = document.querySelector('.players_container');
+        players_container.classList.remove('show_players_container');
+        const repeat_game_btn = document.querySelector('.repeat_game');
+        repeat_game_btn.classList.remove('repeat_game');
+        repeat_game_btn.classList.add('repeat_game_show');
       } else if (computerScore > playerScore) {
         let text = document.createTextNode(
           `COMPUTER WINS ${computerScore}:${playerScore}!`
         );
         gameUpdates.appendChild(text);
+        const players_container = document.querySelector('.players_container');
+        players_container.classList.remove('show_players_container');
+        const repeat_game_btn = document.querySelector('.repeat_game');
+        repeat_game_btn.classList.remove('repeat_game');
+        repeat_game_btn.classList.add('repeat_game_show');
       } else {
         let text = document.createTextNode(`IT WAS A DRAW!`);
         gameUpdates.appendChild(text);
+        const players_container = document.querySelector('.players_container');
+        players_container.classList.remove('show_players_container');
+        const repeat_game_btn = document.querySelector('.repeat_game');
+        repeat_game_btn.classList.remove('repeat_game');
+        repeat_game_btn.classList.add('repeat_game_show');
       }
     }
   }
+
+  const refreshButton = document.querySelector('.repeat_game');
+  //repeat game function
+  const repeatGame = () => {
+    window.location.reload();
+  };
+  refreshButton.addEventListener('click', repeatGame);
 }
 main();
 

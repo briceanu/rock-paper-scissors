@@ -29,7 +29,7 @@ body {
 .players_container {
   display: none;
 }
-h1.title {
+@mixin font_nice {
   font-family: $font-sigmar;
   text-align: center;
   font-size: 5rem;
@@ -38,6 +38,10 @@ h1.title {
   margin-top: 5rem;
   color: white;
   text-shadow: 8px 8px 3px black;
+}
+
+h1.title {
+  @include font_nice();
 }
 .button_container {
   width: 100vw;
@@ -138,8 +142,30 @@ h1.title {
   margin-top: 6rem;
   text-align: center;
 }
-.endbutton {
-  margin-left: auto;
+.repeat_button_container {
+  width: 100vw;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button.repeat_game_show {
+    display: block;
+    padding: 0.5rem 0.7rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-family: $font-clistoga;
+    font-size: $medium;
+    box-shadow: 0 0 20px black;
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
+.repeat_game {
+  display: none;
+}
+.gameupdates {
+  @include font_nice();
 }
 @media (max-width: 600px) {
   h1.title {
