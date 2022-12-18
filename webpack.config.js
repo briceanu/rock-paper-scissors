@@ -19,7 +19,6 @@ module.exports = {
     clean: true,
     assetModuleFilename: '[name][ext]',
   },
-  // devtool: 'source-map',
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
@@ -64,9 +63,9 @@ module.exports = {
       title: 'Rock, Paper, Scissors ',
       template: './src/index.html',
       filename: 'index.html',
+      favicon: './src/assets/rock.svg',
     }),
     new MiniCssExtractPlugin({ filename: 'style[contenthash].css' }),
-    new FaviconsWebpackPlugin('./src/assets/rock.svg'),
   ],
 };
 //change mode to production and then
